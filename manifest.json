@@ -1,9 +1,9 @@
 {
 
-  "description": "Skips Google's url redirect page by reading the target address and forwarding there directly. This way Google gets no notification of your click.",
+  "description": "Skips Google's url redirect page by reading the target address and forwarding there directly. This way Google gets no notification of your click. Works on Youtube as well.",
   "manifest_version": 2,
   "name": "Skip Google Redirect",
-  "version": "1.0",
+  "version": "1.2",
   "homepage_url": "https://github.com/Chandrion/skip-google-redirect",
   "icons": {
     "48": "icons/detour-black-48.png",
@@ -13,17 +13,21 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "skip-google-redirect@chandrion.com",
-      "strict_min_version": "102.0"
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     },
     "gecko_android": {
-      "strict_min_version": "113.0"
+      "strict_min_version": "142.0"
     }
   },
 
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "https://www.google.com/"
+    "*://www.google.com/*",
+    "*://www.youtube.com/*"
   ],
   
   "background":{
